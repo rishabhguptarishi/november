@@ -8,7 +8,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 import utils.SeleniumDriver;
 
 @CucumberOptions(features = { "src/test/resources/features" }, glue = { "step_definations" }, tags = {
-		"@firefox" }, plugin = { "html:target/test-report", "json:target/cucumber-reports/cucumber.json",
+		"@firefox, @chrome" }, plugin = { "html:target/test-report", "json:target/cucumber-reports/cucumber.json",
 				"junit:target/cucumber-reports/cucumber.xml" })
 
 public class RunCucm extends AbstractTestNGCucumberTests {
