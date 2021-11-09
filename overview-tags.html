@@ -48,32 +48,32 @@ $(document).ready(function() {
   $(document).ready(function() {
 
     var chartData = {
-        labels: ["@firefox"],
+        labels: ["@chrome","@firefox"],
         datasets: [
             {
                 label: "Passed",
                 backgroundColor: "#92DD96",
-                data: [100.00]
+                data: [100.00, 100.00]
             },
             {
                 label: "Failed",
                 backgroundColor: "#F2928C",
-                data: [0.00]
+                data: [0.00, 0.00]
             },
             {
                 label: "Skipped",
                 backgroundColor: "#8AF",
-                data: [0.00]
+                data: [0.00, 0.00]
             },
             {
                 label: "Pending",
                 backgroundColor: "#F5F28F",
-                data: [0.00]
+                data: [0.00, 0.00]
             },
             {
                 label: "Undefined",
                 backgroundColor: "#F5B975",
-                data: [0.00]
+                data: [0.00, 0.00]
             }
         ]
     };
@@ -135,7 +135,7 @@ $(document).ready(function() {
           <tr class="info">
             <td>ExecutionAndroidAutomation</td>
                           <td>1</td>
-                        <td>09 Nov 2021, 06:36</td>
+                        <td>09 Nov 2021, 12:03</td>
           </tr>
         </tbody>
       </table>
@@ -197,6 +197,23 @@ $(document).ready(function() {
 
   <tbody>
           <tr>
+        <td class="tagname"><a href="report-tag_chrome.html">@chrome</a></td>
+        
+        <td      class="passed"    >6</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">6</td>
+
+        <td  class="passed"    >2</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="29112290401">29s 112ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
         <td class="tagname"><a href="report-tag_firefox.html">@firefox</a></td>
         
         <td      class="passed"    >6</td>
@@ -210,26 +227,26 @@ $(document).ready(function() {
         <td >0</td>
         <td class="total">2</td>
 
-        <td class="duration" data-value="35790178400">35s 790ms</td>
+        <td class="duration" data-value="43997870900">43s 997ms</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
-      <td>1</td>
-            <td>6</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>6</td>
-
       <td>2</td>
+            <td>12</td>
       <td>0</td>
-      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>12</td>
 
-      <td class="duration">35s 790ms</td>
+      <td>4</td>
+      <td>0</td>
+      <td>4</td>
+
+      <td class="duration">1m 13s 110ms</td>
       <td></td>
     </tr>
     <tr>

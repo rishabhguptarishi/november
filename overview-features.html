@@ -50,7 +50,7 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                6,
+                12,
                 0,
                 0,
                 0,
@@ -93,7 +93,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 6) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 12) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -106,7 +106,7 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                2,
+                4,
                 0
             ],
             backgroundColor: [
@@ -143,7 +143,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 2) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 4) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -233,7 +233,7 @@ $(document).ready(function() {
           <tr class="info">
             <td>ExecutionAndroidAutomation</td>
                           <td>1</td>
-                        <td>09 Nov 2021, 06:36</td>
+                        <td>09 Nov 2021, 12:03</td>
           </tr>
         </tbody>
       </table>
@@ -330,18 +330,18 @@ $(document).ready(function() {
           <tr>
         <td class="tagname"><a href="report-feature_simplecase-feature.html">Basic case</a></td>
         
-        <td      class="passed"    >6</td>
+        <td      class="passed"    >12</td>
         <td >0</td>
         <td >0</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">6</td>
+        <td class="total">12</td>
 
-        <td  class="passed"    >2</td>
+        <td  class="passed"    >4</td>
         <td >0</td>
-        <td class="total">2</td>
+        <td class="total">4</td>
 
-        <td class="duration" data-value="35790178400">35s 790ms</td>
+        <td class="duration" data-value="73110161301">1m 13s 110ms</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
@@ -349,18 +349,18 @@ $(document).ready(function() {
   <tfoot class="total">
     <tr>
       <td>1</td>
-            <td>6</td>
+            <td>12</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>6</td>
+      <td>12</td>
 
-      <td>2</td>
+      <td>4</td>
       <td>0</td>
-      <td>2</td>
+      <td>4</td>
 
-      <td class="duration">35s 790ms</td>
+      <td class="duration">1m 13s 110ms</td>
       <td></td>
     </tr>
     <tr>
