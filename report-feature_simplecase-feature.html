@@ -76,7 +76,7 @@ $(document).ready(function() {
           <tr class="info">
             <td>ExecutionAndroidAutomation</td>
                           <td>1</td>
-                        <td>09 Nov 2021, 12:03</td>
+                        <td>09 Nov 2021, 12:08</td>
           </tr>
         </tbody>
       </table>
@@ -129,19 +129,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">Basic case</td>
-                    <td      class="passed"    >12</td>
-          <td >0</td>
-          <td >0</td>
+                    <td      class="passed"    >9</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >2</td>
           <td >0</td>
           <td >0</td>
           <td class="total">12</td>
 
-          <td  class="passed"    >4</td>
-          <td >0</td>
+          <td  class="passed"    >3</td>
+          <td  class="failed"    >1</td>
           <td class="total">4</td>
 
-          <td class="duration" data-value="73110161301">1m 13s 110ms</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="110932760700">1m 50s 932ms</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -161,7 +161,7 @@ $(document).ready(function() {
   </div>
 
         
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Feature</span>
   <span class="name">Basic case</span>
   
@@ -218,7 +218,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">user opens the android app in "chrome"</span>
   
-  <span class="lead-duration duration">20s 968ms</span>
+  <span class="lead-duration duration">20s 179ms</span>
 
   </div>
 
@@ -299,7 +299,7 @@ $(document).ready(function() {
             <span class="keyword indention">After</span>
                           <span class="location name">AfterActions.tearDownn()</span>
                         
-  <span class="lead-duration duration">2s 069ms</span>
+  <span class="lead-duration duration">2s 095ms</span>
 
           </div>
 
@@ -362,7 +362,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">user opens the snackmagic website in "chrome"</span>
   
-  <span class="lead-duration duration">8s 143ms</span>
+  <span class="lead-duration duration">7s 823ms</span>
 
   </div>
 
@@ -443,7 +443,7 @@ $(document).ready(function() {
             <span class="keyword indention">After</span>
                           <span class="location name">AfterActions.tearDownn()</span>
                         
-  <span class="lead-duration duration">166ms</span>
+  <span class="lead-duration duration">152ms</span>
 
           </div>
 
@@ -506,7 +506,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">user opens the android app in "firefox"</span>
   
-  <span class="lead-duration duration">29s 402ms</span>
+  <span class="lead-duration duration">30s 081ms</span>
 
   </div>
 
@@ -587,7 +587,7 @@ $(document).ready(function() {
             <span class="keyword indention">After</span>
                           <span class="location name">AfterActions.tearDownn()</span>
                         
-  <span class="lead-duration duration">842ms</span>
+  <span class="lead-duration duration">750ms</span>
 
           </div>
 
@@ -612,9 +612,9 @@ $(document).ready(function() {
   </div>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-10">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-10">
     
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
   <span class="name">On Firefox Just open snackmagic website</span>
   
@@ -625,15 +625,15 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-10" class="collapse collapsable-details ">
+  <div id="element-10" class="collapse collapsable-details  in ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-11">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-11">
     
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
   
@@ -643,18 +643,49 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-11" class="inner-level collapse collapsable-details ">
+  <div id="steps-11" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Given</span>
   <span class="name">user opens the snackmagic website in "firefox"</span>
   
-  <span class="lead-duration duration">14s 592ms</span>
+  <span class="lead-duration duration">52s 847ms</span>
 
   </div>
 
         
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-12">
+          <a>Error message</a>
+      </div>
+      <div id="msg-12" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.TimeoutException: TimedPromise timed out after 50000 ms
+Build info: version: '3.5.1', revision: '9c21bb67ef', time: '2017-08-17T15:26:08.955Z'
+System info: host: 'fv-az82-963', ip: '10.1.0.112', os.name: 'Windows Server 2019', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_312'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=C:\Users\runneradmin\AppData\Local\Temp\rust_mozprofileK63LQo, moz:geckodriverVersion=0.30.0, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, moz:headless=false, platform=ANY, proxy=Proxy(), moz:accessibilityChecks=false, moz:useNonSpecCompliantPointerOrigin=false, acceptInsecureCerts=false, browserVersion=94.0, moz:shutdownTimeout=60000.0, platformVersion=10.0, moz:processID=1032.0, browserName=firefox, moz:buildID=20211028161635, javascriptEnabled=true, platformName=windows, setWindowRect=true, moz:webdriverClick=true}]
+Session ID: 9804c280-3136-4b90-a963-6463063fbdce
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:368)
+	at utils.SeleniumDriver.openPage(SeleniumDriver.java:40)
+	at step_definations.Steps.user_opens_the_snackmagic_website_in(Steps.java:25)
+	at ✽.Given user opens the snackmagic website in "firefox"(simplecase.feature:23)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
         
@@ -667,11 +698,11 @@ $(document).ready(function() {
       </div>
           <div class="step">
         
-<div class="brief passed">
+<div class="brief skipped">
   <span class="keyword indention">When</span>
   <span class="name">user clicks on the Media option</span>
   
-  <span class="lead-duration duration">003ms</span>
+  <span class="lead-duration duration">000ms</span>
 
   </div>
 
@@ -688,7 +719,7 @@ $(document).ready(function() {
       </div>
           <div class="step">
         
-<div class="brief passed">
+<div class="brief skipped">
   <span class="keyword indention">Then</span>
   <span class="name">validate custom view</span>
   
@@ -713,7 +744,7 @@ $(document).ready(function() {
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-12">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-13">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -725,13 +756,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-12" class="inner-level collapse collapsable-details ">
+    <div id="after-13" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
                           <span class="location name">AfterActions.tearDownn()</span>
                         
-  <span class="lead-duration duration">1s 541ms</span>
+  <span class="lead-duration duration">1s 442ms</span>
 
           </div>
 
