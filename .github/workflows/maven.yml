@@ -4,13 +4,13 @@
 name: Java CI with Maven
 
 on:
+  schedule:
+  - cron: '15 12 * * *'
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
   workflow_dispatch:
-  schedule:
-  - cron: '58 11 * * *'
   repository_dispatch:
 
 jobs:
