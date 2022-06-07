@@ -14,7 +14,7 @@ on:
   repository_dispatch:
 
 jobs:
-  buildAndDeply:
+  build:
     runs-on: windows-latest
     env:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
