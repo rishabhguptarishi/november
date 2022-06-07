@@ -43,3 +43,10 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./target/cucumber-report-html/cucumber-html-reports
+    - name: Slack Notification
+      uses: act10ns/slack@v1
+      with: 
+        status: ${{ job.status }}
+        steps: ${{ toJson(steps) }}
+        channel: '#qa-automation'
+        if: always()   
