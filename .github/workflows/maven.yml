@@ -24,7 +24,7 @@ jobs:
       uses: act10ns/slack@v1
       with: 
         status: starting
-        channel: '#meetups'
+        channel: '#qa-automation'
         message: Starting Build and Deploy...
         if: always()
     - uses: actions/checkout@v2
