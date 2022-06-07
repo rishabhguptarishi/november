@@ -25,7 +25,7 @@ jobs:
       with: 
         status: starting
         channel: '#qa-automation'
-        message: Starting Build and Deploy...
+        message: Test execution Starts...
         if: always()
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -49,4 +49,5 @@ jobs:
         status: ${{ job.status }}
         steps: ${{ toJson(steps) }}
         channel: '#qa-automation'
+        message: Please verify reports - https://sm-automation-report.alpha.snackmagic.com/
         if: always()   
