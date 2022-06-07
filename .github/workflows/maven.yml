@@ -49,5 +49,13 @@ jobs:
         status: ${{ job.status }}
         steps: ${{ toJson(steps) }}
         channel: '#qa-automation'
-        message: Please verify reports - https://sm-automation-report.alpha.snackmagic.com/
-        if: always()   
+        if: always()
+    - name: Slack Notification
+      uses: act10ns/slack@v1
+      with: 
+        status: ${{ job.status }}
+        steps: ${{ toJson(steps) }}
+        channel: '#qa-automation'
+        message: View reports here...https://sm-automation-report.alpha.snackmagic.com
+        if: always()
+        
