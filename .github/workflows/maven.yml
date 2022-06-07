@@ -16,9 +16,7 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
+    
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -39,6 +37,7 @@ jobs:
     - name: Slack Notifications
       uses: act10ns/slack@v1
       with:
+       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
        status: ${{ job.status }}
        steps: ${{ toJson(steps) }}
        channel: '#qa-automation'
