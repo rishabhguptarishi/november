@@ -36,7 +36,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./target/cucumber-report-html/cucumber-html-reports
-    - name: Slack notifications
+    - name: Slack Notifications
       uses: act10ns/slack@v1
       with:
        status: ${{ job.status }}
