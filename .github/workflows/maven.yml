@@ -52,7 +52,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./target/cucumber-report-html/cucumber-html-reports
     - name: Slack Notification
-      if: ${{ failure() }}
+      if: always()
       uses: act10ns/slack@v1
       with: 
         status: ${{ job.status }}
@@ -66,5 +66,5 @@ jobs:
         steps: ${{ toJson(steps) }}
         channel: '#qa-automation'
         message: View reports here...https://sm-automation-report.alpha.snackmagic.com
-        if: always()
+        
         
