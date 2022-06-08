@@ -38,15 +38,12 @@ jobs:
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/cucumber.json"
-        
-    - name: Read package.json
-      id: package
-      uses: juliangruber/read-file-action@v1
-      with:
-        path: 'target\cucumber-reports\cucumber.json'
-    - name: Echo package.json
-      run: echo "${{ steps.package.outputs.content }}"
-           echo "failed"   
+    - name: Set selected color
+      run: echo '::set-output name=SELECTED_COLOR::green'
+      id: random-color-generator
+    - name: Get color
+      run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
+      
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
