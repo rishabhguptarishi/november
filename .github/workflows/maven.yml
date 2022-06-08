@@ -38,6 +38,8 @@ jobs:
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/cucumber.json"
+    - name: Try to fail
+      run: exit 1
     - name: Set selected color
       run: echo '::set-output name=SELECTED_COLOR::green'
       id: random-color-generator
