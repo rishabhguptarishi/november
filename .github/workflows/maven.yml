@@ -38,6 +38,15 @@ jobs:
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/cucumber.json"
+    - name: set output
+      id: set
+      run: |
+        echo ::set-output name=json_var::'[{ "name": "test", "client_payload": "111" }, { "name": "test2", "client_payload": "222" }] '
+    - name: use output
+      run: |
+        echo $json_var | jq '.[].name'
+      env:
+        json_var: ${{ steps.set.outputs.json_var}}
     - name: Try to fail
       run: exit 1
     - name: Set selected color
