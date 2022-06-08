@@ -39,13 +39,13 @@ jobs:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/cucumber.json"
         
-    - name: get version
-      id: version
-      uses: notiz-dev/github-action-json-property@release
-      with: 
+    - name: Read package.json
+      id: package
+      uses: juliangruber/read-file-action@v1
+      with:
         path: 'target\cucumber-reports\cucumber.json'
-        prop_path: 'version'
-    - run: echo ${{steps.version.outputs.prop}}          
+    - name: Echo package.json
+      run: echo "${{ steps.package.outputs.content }}    
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
