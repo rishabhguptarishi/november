@@ -33,7 +33,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn verify
+      run: mvn clean
     - uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
@@ -45,6 +45,7 @@ jobs:
     - name: use output
       run: |
         echo $json_var | jq '.[].name'
+        echo ${{ steps.set.outputs.json_var}}
       env:
         json_var: ${{ steps.set.outputs.json_var}}
     - name: Try to fail
