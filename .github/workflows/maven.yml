@@ -38,6 +38,18 @@ jobs:
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/cucumber.json"
+    - name: Test
+    - id: set_var
+      run: |
+        content=`cat ./path/to/package.json`
+        # the following lines are only required for multi line json
+        content="${content//'%'/'%25'}"
+        content="${content//$'\n'/'%0A'}"
+        content="${content//$'\r'/'%0D'}"
+        # end of optional handling for multi line json
+        echo "::set-output name=packageJson::$content"
+    - run: |
+        echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
