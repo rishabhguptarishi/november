@@ -38,14 +38,14 @@ jobs:
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/cucumber.json"
-    - name: fetch the json value
-      run: |
-         githubjson=`cat $GITHUB_EVENT_PATH`
-         echo $githubjson
-         number=`echo $(jq -r '.number' <<< "$githubjson")`
-         PRTitle=`echo $(jq -r '.pull_request.title' <<< "$githubjson")`
-         PRUrl=`echo $(jq -r '.pull_request.html_url' <<< "$githubjson")`
-         PRBody=`echo $(jq -r '.pull_request.body' <<< "$githubjson")`     
+        
+    - name: get version
+      id: version
+      uses: notiz-dev/github-action-json-property@release
+      with: 
+        path: '**/cucumber.json'
+        prop_path: 'version'
+    - run: echo ${{steps.version.outputs.prop}}          
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
