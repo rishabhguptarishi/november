@@ -51,14 +51,10 @@ jobs:
     - name: Echo package.json
       env:
         VERIFICATION_PURPOSE: '${{ steps.package.outputs.content }}'
-        TEST_STATUS: passed
       if: | 
         contains(env.VERIFICATION_PURPOSE, 'failed') ||
         contains(env.VERIFICATION_PURPOSE, 'skipped') 
       run: |
-      
-        TEST_STATUS: failed
-        echo "$env.TEST_STATUS"
         exit 1
     - name: Slack Notification
       if: always()
@@ -75,6 +71,6 @@ jobs:
         mention: 'here'
         steps: ${{ toJson(steps) }}
         channel: '#qa-automation'
-        message: Status is $env.TEST_STATUS ....View reports here...https://sm-automation-report.alpha.snackmagic.com
+        message: View reports here...https://sm-automation-report.alpha.snackmagic.com
         
         
