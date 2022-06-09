@@ -44,9 +44,11 @@ jobs:
       with:
         path: 'target\cucumber-reports\cucumber.json'
     - name: Echo package.json
-      run: echo "This is the file '${{ steps.package.outputs.content }}'"
+      env:
+         VERIFICATION_PURPOSE: '${{ steps.package.outputs.content }}'
+      run: echo "$VERIFICATION_PURPOSE"
       id: run_tests
-    - name: Test cases status  
+    - name: Test cases status 
       run: echo "Hello value is ${{ steps.run_tests.outputs.SELECTED_COLOR }}"
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
