@@ -31,6 +31,7 @@ public class Steps {
 	@When("^user clicks on the Media option$")
 	public void user_clicks_on_the_Media_option() throws Throwable {
 		System.out.println("Step2 is completed");
+		Assert.assertEquals("Yes", "NO");
 
 	}
 
