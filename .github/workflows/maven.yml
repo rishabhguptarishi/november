@@ -56,29 +56,22 @@ jobs:
         contains(env.VERIFICATION_PURPOSE, 'skipped') 
       run: |
         exit 1
-    - name: Slack Notification Failure
+    - name: Slack Notification Success
       if: ${{ success() }}
       uses: act10ns/slack@v1
       with: 
-        status: ${{ job.status }}
-        steps: ${{ toJson(steps) }}
         channel: '#qa-automation'
-        message: Test cases are failed
+        message: All test cases are PASSED, View reports here...https://sm-automation-report.alpha.snackmagic.com
+    - name: Slack Notification Failure
+      if: ${{ failure() }}
+      uses: act10ns/slack@v1
+      with: 
+        channel: '#qa-automation'
+        message: Some test cases are Failed, View reports here...https://sm-automation-report.alpha.snackmagic.com
     - name: Slack Notification
       if: always()
       uses: act10ns/slack@v1
       with: 
         status: ${{ job.status }}
         steps: ${{ toJson(steps) }}
-        channel: '#qa-automation'
-    - name: Slack Notification
-      if: always()
-      uses: act10ns/slack@v1
-      with: 
-        status: ${{ job.status }}
-        mention: 'here'
-        steps: ${{ toJson(steps) }}
-        channel: '#qa-automation'
-        message: View reports here...https://sm-automation-report.alpha.snackmagic.com
-        
-        
+        channel: '#qa-automation'    
