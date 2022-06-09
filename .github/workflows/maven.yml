@@ -56,6 +56,14 @@ jobs:
         contains(env.VERIFICATION_PURPOSE, 'skipped') 
       run: |
         exit 1
+    - name: Slack Notification Failure
+      if: ${{ failure() }}
+      uses: act10ns/slack@v1
+      with: 
+        status: ${{ job.status }}
+        steps: ${{ toJson(steps) }}
+        channel: '#qa-automation'
+        message: Test cases are failed
     - name: Slack Notification
       if: always()
       uses: act10ns/slack@v1
