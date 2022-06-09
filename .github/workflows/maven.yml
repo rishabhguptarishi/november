@@ -44,7 +44,9 @@ jobs:
       with:
         path: 'target\cucumber-reports\cucumber.json'
     - name: Echo package.json
-      run: echo '::set-output name=SELECTED_COLOR::${{ steps.package.outputs.content }}'   
+      run: echo '::set-output name=SELECTED_COLOR::${{ steps.package.outputs.content }}'
+      id: run_tests
+      if: contains(${{ steps.run_tests.outputs.*}}, 'passed')   
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
