@@ -46,7 +46,7 @@ jobs:
     - name: Echo package.json
       env:
          VERIFICATION_PURPOSE: '${{ steps.package.outputs.content }}'
-      if: contains(${{ secrets.VERIFICATION_PURPOSE }}, 'passed')
+      if: ${{ contains($VERIFICATION_PURPOSE, 'passed')}}
       run: |
        echo "let's run"
       id: run_tests
