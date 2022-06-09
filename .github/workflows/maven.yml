@@ -51,11 +51,7 @@ jobs:
       if: contains(env.VERIFICATION_PURPOSE, 'passed')
       env:
         TEST_STATUS: Passed
-      run: |
-       echo "let's run"
-      id: run_tests
-    - name: Test cases status 
-      run: echo "Hello value is ${{ steps.run_tests.outputs.SELECTED_COLOR }}"
+      run: echo "Passed it"
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
