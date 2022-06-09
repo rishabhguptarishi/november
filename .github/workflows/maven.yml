@@ -48,7 +48,8 @@ jobs:
       id: run_tests
     - name: Test cases status  
       if: contains(${{ steps.run_tests.outputs.*}}, 'failed')
-      run: echo "all cases are passed"
+      run: |
+       echo "let's run"
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
