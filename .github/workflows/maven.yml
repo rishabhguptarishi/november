@@ -51,10 +51,14 @@ jobs:
     - name: Echo package.json
       env:
         VERIFICATION_PURPOSE: '${{ steps.package.outputs.content }}'
+        TEST_STATUS: passed
       if: | 
         contains(env.VERIFICATION_PURPOSE, 'failed') ||
         contains(env.VERIFICATION_PURPOSE, 'skipped') 
-      run: |  
+      run: |
+      
+        TEST_STATUS: failed
+        echo "$env.TEST_STATUS"
         exit 1
     - name: Slack Notification
       if: always()
