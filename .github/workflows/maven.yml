@@ -38,6 +38,11 @@ jobs:
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/cucumber.json"
+    - name: Deploy report page to GitHub Page
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./target/cucumber-report-html/cucumber-html-reports
     - name: Read package.json
       id: package
       uses: juliangruber/read-file-action@v1
@@ -51,11 +56,6 @@ jobs:
         contains(env.VERIFICATION_PURPOSE, 'skipped') 
       run: |  
         exit 1
-    - name: Deploy report page to GitHub Page
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./target/cucumber-report-html/cucumber-html-reports
     - name: Slack Notification
       if: always()
       uses: act10ns/slack@v1
