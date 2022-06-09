@@ -39,7 +39,7 @@ jobs:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/cucumber.json"
     - name: Read package.json
-      id: package
+      id: packag:e
       uses: juliangruber/read-file-action@v1
       with:
         path: 'target\cucumber-reports\cucumber.json'
@@ -49,9 +49,8 @@ jobs:
       run: echo "let's run validation"
     - name: Status of test run
       if: contains(env.VERIFICATION_PURPOSE, 'passed')
-      env:
-        TEST_STATUS: Passed
-      run: echo "Passed it"
+      run: | 
+       echo "Passed it"
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
