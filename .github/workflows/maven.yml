@@ -44,7 +44,7 @@ jobs:
       with:
         path: 'target\cucumber-reports\cucumber.json'
     - name: Echo package.json
-      run: echo '::set-output name=SELECTED_COLOR::${{ steps.package.outputs.content }}'
+      run: echo "${{ steps.package.outputs.content }}"
       id: run_tests
     - name: Test cases status  
       run: echo "Hello value is ${{ steps.run_tests.outputs.SELECTED_COLOR }}"
