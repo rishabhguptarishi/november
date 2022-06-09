@@ -48,7 +48,7 @@ jobs:
         echo '::set-output name=SELECTED_COLOR::${{ steps.package.outputs.content }}'
       id: run_tests
     - name: Test cases status  
-      run: echo "Hello value is '${{ steps.run_tests.outputs }}'"
+      run: echo "Hello value is '${{ steps.run_tests.outputs.* }}'"
     - name: Deploy report page to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
       with:
