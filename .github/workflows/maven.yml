@@ -46,10 +46,11 @@ jobs:
     - name: Echo package.json
       env:
          VERIFICATION_PURPOSE: '${{ steps.package.outputs.content }}'
+    - name: Status of test run
       if: contains(env.VERIFICATION_PURPOSE, 'passed')
+      env:
+        TEST_STATUS: Passed
       run: |
-       env: 
-         TEST_STATUS: Passed
        echo "let's run"
       id: run_tests
     - name: Test cases status 
@@ -74,6 +75,6 @@ jobs:
         mention: 'here'
         steps: ${{ toJson(steps) }}
         channel: '#qa-automation'
-        message: Status is env.TEST_STATUS ....View reports here...https://sm-automation-report.alpha.snackmagic.com
+        message: Status is $env.TEST_STATUS ....View reports here...https://sm-automation-report.alpha.snackmagic.com
         
         
