@@ -39,7 +39,7 @@ jobs:
         access-token: ${{ secrets.GITHUB_TOKEN }}
         path: "**/cucumber.json"
     - name: Read package.json
-      id: packag:e
+      id: package
       uses: juliangruber/read-file-action@v1
       with:
         path: 'target\cucumber-reports\cucumber.json'
