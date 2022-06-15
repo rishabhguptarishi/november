@@ -33,7 +33,8 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: Xvfb :99 -ac -screen 0 1280x1024x24 &
+      run: | 
+           Xvfb :99 -ac -screen 0 1280x1024x24 &
            export DISPLAY=:99
            google-chrome --no-sandbox &
            mvn package
