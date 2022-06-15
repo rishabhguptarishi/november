@@ -51,7 +51,7 @@ jobs:
       id: package
       uses: juliangruber/read-file-action@v1
       with:
-        path: '/target/cucumber-reports/cucumber.json'
+        path: '/home/runner/work/november/november/target/cucumber-reports/cucumber.json'
     - name: Echo package.json
       env:
         VERIFICATION_PURPOSE: '${{ steps.package.outputs.content }}'
