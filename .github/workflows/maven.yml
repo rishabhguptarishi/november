@@ -25,7 +25,7 @@ jobs:
       with: 
         status: starting
         channel: '#qa-automation'
-        message: Test execution Starts...
+        message: @channel Test execution Starts...
         if: always()
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
