@@ -16,17 +16,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        
     steps:
-    - name: Slack Notification
-      uses: act10ns/slack@v1
-      with: 
-        status: starting
-        channel: '#qa-automation'
-        message: '@channel Test execution Starts...'
-        if: always()
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
@@ -60,24 +50,3 @@ jobs:
         contains(env.VERIFICATION_PURPOSE, 'skipped') 
       run: |
         exit 1
-    - name: Slack Notification
-      if: always()
-      uses: act10ns/slack@v1
-      with: 
-        status: ${{ job.status }}
-        steps: ${{ toJson(steps) }}
-        channel: '#qa-automation'    
-    - name: Slack Notification Success
-      if: ${{ success() }}
-      uses: act10ns/slack@v1
-      with: 
-        status: ${{ job.status }}
-        channel: '#qa-automation'
-        message: All test cases are PASSED, View reports here...https://sm-automation-report.alpha.snackmagic.com
-    - name: Slack Notification Failure
-      if: ${{ failure() }}
-      uses: act10ns/slack@v1
-      with: 
-        status: ${{ job.status }}
-        channel: '#qa-automation'
-        message: Some test cases are Failed, View reports here...https://sm-automation-report.alpha.snackmagic.com
