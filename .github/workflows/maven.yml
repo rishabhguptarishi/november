@@ -27,7 +27,7 @@ jobs:
            Xvfb :99 -ac -screen 0 1280x1024x24 &
            export DISPLAY=:99
            google-chrome --no-sandbox &
-           mvn verify
+           mvn clean
     - uses: deblockt/cucumber-report-annotations-action@v1.7
       with:
         access-token: ${{ secrets.GITHUB_TOKEN }}
