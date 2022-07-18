@@ -24,6 +24,9 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: | 
+           VERSION_STRING="102.0.5005.63"
+           wget "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${VERSION_STRING}_amd64.deb"
+           sudo dpkg -i "google-chrome-stable_${VERSION_STRING}_amd64.deb"
            Xvfb :99 -ac -screen 0 1280x1024x24 &
            export DISPLAY=:99
            google-chrome --no-sandbox &
