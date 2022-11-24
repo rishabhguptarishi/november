@@ -46,4 +46,7 @@ jobs:
       with:
         path: '/home/runner/work/november/november/target/cucumber-reports/cucumber.json'
     - name: Echo package.json
-      run: echo "${{ steps.package.outputs.content }}"
+      if: | 
+        contains('${{ steps.package.outputs.content }}','failed')
+      run: | 
+        echo "test case is failed" 
