@@ -46,6 +46,4 @@ jobs:
       with:
         path: '/home/runner/work/november/november/target/cucumber-reports/cucumber.json'
     - name: Echo package.json
-      env:
-        VERIFICATION_PURPOSE: '${{ steps.package.outputs.content }}'
       run: echo "${{ steps.package.outputs.content }}"
