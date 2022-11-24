@@ -48,4 +48,4 @@ jobs:
     - name: Echo package.json
       env:
         VERIFICATION_PURPOSE: '${{ steps.package.outputs.content }}'
-      run: echo VERIFICATION_PURPOSE
+      run: echo ${{ secrets.VERIFICATION_PURPOSE }}
