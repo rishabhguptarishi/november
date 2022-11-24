@@ -48,5 +48,5 @@ jobs:
     - name: Echo package.json
       env: 
         VERIFICATION_PURPOSE: '${{ steps.package.outputs.content }}'
-      if: contains(env.VERIFICATION_PURPOSE,'xxxxxxxxxxxxxxx')
+      if: contains(env.VERIFICATION_PURPOSE,'passed')
       run: echo contains(env.VERIFICATION_PURPOSE,'xxxxxxxxxxxxxxx')
