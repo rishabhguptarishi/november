@@ -41,12 +41,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./target/cucumber-report-html/cucumber-html-reports
     - name: print number of occurances
-      run: grep -o -i "passed" /home/runner/work/november/november/target/cucumber-reports/cucumber.json | wc -l
-    - name: Read package.json
-      id: package
-      uses: juliangruber/read-file-action@v1
-      with:
-        path: '/home/runner/work/november/november/target/cucumber-reports/cucumber.json'
-    - name: Echo package.json
-      if: contains(steps.package.outputs.content,'failed')
-      run: exit 1
+      id: passed
+      run: echo 'count = $(grep -o -i \"passed\" /home/runner/work/november/november/target/cucumber-reports/cucumber.json | wc -l)' >> $GITHUB_OUTPUT
+    - name: Echo passed
+      run: echo "${{ steps.passed.outputs.count }}"
