@@ -44,4 +44,4 @@ jobs:
       id: passed
       run: echo "passed_count=$( grep -o -i '\"passed\"' /home/runner/work/november/november/target/cucumber-reports/cucumber.json | wc -l )" >> $GITHUB_OUTPUT
     - name: Echo passed
-      run: echo "${{ steps.passed.outputs.passed_count }}"
+      run: echo "$((steps.passed.outputs.passed_count + 100)) "
