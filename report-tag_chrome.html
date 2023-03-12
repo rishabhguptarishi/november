@@ -76,7 +76,7 @@ $(document).ready(function() {
           <tr class="info">
             <td>ExecutionAndroidAutomation</td>
                           <td>1</td>
-                        <td>11 Mar 2023, 04:53</td>
+                        <td>12 Mar 2023, 04:53</td>
           </tr>
         </tbody>
       </table>
@@ -129,19 +129,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@chrome</td>
-                    <td      class="passed"    >6</td>
-          <td >0</td>
-          <td >0</td>
+                    <td      class="passed"    >3</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >2</td>
           <td >0</td>
           <td >0</td>
           <td class="total">6</td>
 
-          <td  class="passed"    >2</td>
-          <td >0</td>
+          <td  class="passed"    >1</td>
+          <td  class="failed"    >1</td>
           <td class="total">2</td>
 
-          <td class="duration" data-value="16551623623">16s 551ms</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="12660331930">12s 660ms</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -169,9 +169,9 @@ $(document).ready(function() {
   </div>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
     
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
   <span class="name">On Chrome Just open android app through automation</span>
   
@@ -182,15 +182,15 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-2">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-2">
     
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
   
@@ -200,18 +200,85 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-2" class="inner-level collapse collapsable-details ">
+  <div id="steps-2" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Given</span>
   <span class="name">user opens the android app in "chrome"</span>
   
-  <span class="lead-duration duration">7s 622ms</span>
+  <span class="lead-duration duration">1s 936ms</span>
 
   </div>
 
         
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class="collapsable-control" data-target="#msg-3">
+          <a>Error message</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details">
+        <pre>org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 111
+Current browser version is 110.0.5481.177 with binary path /usr/bin/google-chrome
+Build info: version: '3.5.1', revision: '9c21bb67ef', time: '2017-08-17T15:26:08.955Z'
+System info: host: 'fv-az987-17', ip: '10.1.0.36', os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-1034-azure', java.version: '1.8.0_362'
+Driver info: driver.version: SeleniumDriver
+remote stacktrace: #0 0x561206c1b243 <unknown>
+#1 0x5612069df7a6 <unknown>
+#2 0x561206a0ce5c <unknown>
+#3 0x561206a07bf3 <unknown>
+#4 0x561206a0449b <unknown>
+#5 0x561206a462a7 <unknown>
+#6 0x561206a458cf <unknown>
+#7 0x561206a3ce53 <unknown>
+#8 0x561206a0f9ea <unknown>
+#9 0x561206a10b2e <unknown>
+#10 0x561206c6fd5e <unknown>
+#11 0x561206c73a80 <unknown>
+#12 0x561206c558b0 <unknown>
+#13 0x561206c74b63 <unknown>
+#14 0x561206c46f75 <unknown>
+#15 0x561206c97998 <unknown>
+#16 0x561206c97b27 <unknown>
+#17 0x561206cb2c23 <unknown>
+#18 0x7f6d89ee3b43 <unknown>
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:360)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:531)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:363)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:137)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:254)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:137)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:178)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:167)
+	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:124)
+	at utils.SeleniumDriver.<init>(SeleniumDriver.java:24)
+	at utils.SeleniumDriver.setUpDriver(SeleniumDriver.java:49)
+	at step_definations.Steps.user_opens_the_android_app_in(Steps.java:14)
+	at ✽.Given user opens the android app in "chrome"(simplecase.feature:5)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
         
@@ -224,7 +291,7 @@ $(document).ready(function() {
       </div>
           <div class="step">
         
-<div class="brief passed">
+<div class="brief skipped">
   <span class="keyword indention">When</span>
   <span class="name">user clicks on the Media option</span>
   
@@ -245,7 +312,7 @@ $(document).ready(function() {
       </div>
           <div class="step">
         
-<div class="brief passed">
+<div class="brief skipped">
   <span class="keyword indention">Then</span>
   <span class="name">validate custom view</span>
   
@@ -270,7 +337,7 @@ $(document).ready(function() {
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-3">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -282,13 +349,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-3" class="inner-level collapse collapsable-details ">
+    <div id="after-4" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
                           <span class="location name">AfterActions.tearDownn()</span>
                         
-  <span class="lead-duration duration">110ms</span>
+  <span class="lead-duration duration">000ms</span>
 
           </div>
 
@@ -316,7 +383,7 @@ $(document).ready(function() {
   </div>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-4">
+    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
     
 <div class="brief passed">
   <span class="keyword indention">Scenario</span>
@@ -329,13 +396,13 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-4" class="collapse collapsable-details ">
+  <div id="element-5" class="collapse collapsable-details ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-5">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-6">
     
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -347,14 +414,14 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-5" class="inner-level collapse collapsable-details ">
+  <div id="steps-6" class="inner-level collapse collapsable-details ">
           <div class="step">
         
 <div class="brief passed">
   <span class="keyword indention">Given</span>
   <span class="name">user opens the snackmagic website in "chrome"</span>
   
-  <span class="lead-duration duration">8s 929ms</span>
+  <span class="lead-duration duration">10s 723ms</span>
 
   </div>
 
@@ -417,7 +484,7 @@ $(document).ready(function() {
 
     
   <div class="inner-level hooks-after">
-        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-6">
+        <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-7">
       
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -429,13 +496,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-6" class="inner-level collapse collapsable-details ">
+    <div id="after-7" class="inner-level collapse collapsable-details ">
               <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
                           <span class="location name">AfterActions.tearDownn()</span>
                         
-  <span class="lead-duration duration">164ms</span>
+  <span class="lead-duration duration">139ms</span>
 
           </div>
 
